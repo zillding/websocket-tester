@@ -1,15 +1,15 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.0.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "websocket-tester",
+  "version": "1.0.0",
+  "description": "A simple web app for testing websocket, both browser websocket api and socket.io",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "https://github.com/zillding/websocket-tester.git"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Max Stoiber",
+  "author": "Zill Ding",
   "license": "MIT",
   "scripts": {
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
@@ -44,61 +44,6 @@
     "stylelint": "*.css"
   },
   "pre-commit": "lint:staged",
-  "babel": {
-    "presets": [
-      "es2015-webpack",
-      "react",
-      "stage-0"
-    ],
-    "env": {
-      "production": {
-        "only": [
-          "app"
-        ],
-        "plugins": [
-          "transform-react-remove-prop-types",
-          "transform-react-constant-elements",
-          "transform-react-inline-elements"
-        ]
-      }
-    }
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true,
-      "node": true,
-      "mocha": true
-    },
-    "rules": {
-      "max-len": 0
-    },
-    "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "./internals/webpack/webpack.test.babel.js"
-        }
-      }
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "color-hex-case": "upper",
-      "string-quotes": "single",
-      "font-family-name-quotes": "always-where-recommended",
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": [
-            "global"
-          ]
-        }
-      ],
-      "indentation": 2
-    }
-  },
   "dependencies": {
     "babel-polyfill": "^6.7.4",
     "chalk": "^1.1.3",
