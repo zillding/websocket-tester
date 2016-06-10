@@ -11,19 +11,19 @@
  * the linting exception.
  */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+import Navbar from 'components/Navbar';
 
-  static propTypes = {
-    children: React.PropTypes.node,
-  };
+const App = ({ children }) => (
+  <div>
+    <Navbar active="websocket" />
+    {children}
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+App.propTypes = {
+  children: PropTypes.node,
+};
+
+export default App;
