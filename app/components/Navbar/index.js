@@ -17,9 +17,12 @@ const Navbar = () => (
     className="ui inverted menu"
     style={style}
   >
-    <div className="header item">
+    <Link
+      to="/"
+      className="header item"
+    >
       WebSocket Tester
-    </div>
+    </Link>
     <Link
       to="/websocket"
       activeClassName="active"

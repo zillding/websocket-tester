@@ -11,11 +11,27 @@
 
 import React from 'react';
 
-export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+import { Link } from 'react-router';
 
-  render() {
-    return (
-      <h1>This is the Homepage!</h1>
-    );
-  }
-}
+const HomePage = () => (
+  <div className="ui container">
+    <h1>WebSocket Tester</h1>
+    <p>This is a simple web application to test websocket.</p>
+    <p>Currently, it support testing using both browser <code>WebSocket</code> API and <code>Socket.IO</code></p>
+    <p>Click on the following buttons to go to the tester.</p>
+    <Link
+      to="/websocket"
+      className="ui primary button"
+    >
+      WebSocket
+    </Link>
+    <Link
+      to="/socketio"
+      className="ui secondary button"
+    >
+      Socket.IO
+    </Link>
+  </div>
+);
+
+export default HomePage;
