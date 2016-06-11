@@ -34,7 +34,7 @@ class SendMessage extends Component {
   render() {
     return (
       <div>
-        <p>Type your message and press 'send':</p>
+        <p>Message data:</p>
         <Codemirror
           value={this.state.text}
           onChange={this.handleChange}

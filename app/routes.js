@@ -63,7 +63,7 @@ export default function createRoutes(store) {
         const renderRoute = loadModule(cb);
 
         importModules.then(([reducer, component]) => {
-          injectReducer('socketio', reducer);
+          injectReducer('socketio', reducer.default);
           renderRoute(component);
         });
 
