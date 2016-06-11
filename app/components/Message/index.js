@@ -10,8 +10,17 @@ import { ObjectInspector } from 'react-inspector';
 
 import parseJsObj from 'utils/parseJsObj';
 
-function Message({ data: { type, data } }) {
-  const content = <ObjectInspector data={parseJsObj(data)} />;
+function Message({ data: { type, event, data } }) {
+  const content = (
+    <div>
+      {
+        event ?
+          <div className="ui small pointing below purple basic label">{event}</div> :
+          null
+      }
+      <ObjectInspector data={parseJsObj(data)} />
+    </div>
+  );
 
   const style = { margin: '2px 0' };
 
