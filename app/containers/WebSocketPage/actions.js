@@ -39,7 +39,7 @@ export const clearMessages = createAction(MESSAGES_CLEAR);
 export default dispatch => ({
   openWs: () => dispatch(openWs(dispatch)),
   closeWs: () => dispatch(closeWs()),
-  setWsUrl: () => dispatch(setWsUrl()),
+  setWsUrl: url => dispatch(setWsUrl(url)),
   sendMessage: text => dispatch(sendMessage(text)),
   clearMessages: () => dispatch(clearMessages()),
 });

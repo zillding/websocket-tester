@@ -49,7 +49,7 @@ export const clearMessages = createAction(MESSAGES_CLEAR);
 
 export default dispatch => ({
   openWs: () => dispatch(openWs(dispatch)),
-  setWsUrl: () => dispatch(setWsUrl()),
+  setWsUrl: url => dispatch(setWsUrl(url)),
   setEvent: value => dispatch(setEvent(value)),
   subscribeEvent: event => dispatch(subscribeEvent(event)),
   unsubscribeEvent: event => dispatch(unsubscribeEvent(event)),
