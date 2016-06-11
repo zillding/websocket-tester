@@ -2,7 +2,7 @@
 // They are all wrapped in the App component, which should contain the navbar etc
 // See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
 // about the code splitting business
-import { getHooks } from 'utils/hooks';
+// import { getHooks } from 'utils/hooks';
 
 const errorLoading = (err) => {
   console.error('Dynamic page loading failed', err); // eslint-disable-line no-console
@@ -12,9 +12,9 @@ const loadModule = (cb) => (componentModule) => {
   cb(null, componentModule.default);
 };
 
-export default function createRoutes(store) {
+export default function createRoutes() {
   // Create reusable async injectors using getHooks factory
-  const { injectReducer } = getHooks(store);
+  // const { injectReducer } = getHooks(store);
 
   return [
     {
@@ -38,14 +38,12 @@ export default function createRoutes(store) {
       name: 'websocket',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          System.import('containers/WebSocketPage/reducer'),
           System.import('containers/WebSocketPage'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([reducer, component]) => {
-          injectReducer('websocket', reducer.default);
+        importModules.then(([component]) => {
           renderRoute(component);
         });
 
@@ -56,14 +54,12 @@ export default function createRoutes(store) {
       name: 'socketio',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          System.import('containers/SocketIOPage/reducer'),
           System.import('containers/SocketIOPage'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([reducer, component]) => {
-          injectReducer('socketio', reducer.default);
+        importModules.then(([component]) => {
           renderRoute(component);
         });
 
