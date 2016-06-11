@@ -8,16 +8,10 @@ import React, { PropTypes } from 'react';
 
 import { ObjectInspector } from 'react-inspector';
 
-function parseData(data) {
-  try {
-    return JSON.parse(data);
-  } catch (err) {
-    return data;
-  }
-}
+import parseJsObj from 'utils/parseJsObj';
 
 function Message({ data: { type, data } }) {
-  const content = <ObjectInspector data={parseData(data)} />;
+  const content = <ObjectInspector data={parseJsObj(data)} />;
 
   const style = { margin: '2px 0' };
 

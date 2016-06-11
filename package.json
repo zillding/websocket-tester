@@ -68,6 +68,7 @@
     "redux-immutable": "^3.0.6",
     "redux-saga": "^0.10.0",
     "reselect": "^2.5.1",
+    "socket.io-client": "^1.4.6",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
