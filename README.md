@@ -1,5 +1,7 @@
 # Websocket Tester
 
+[![Build Status](https://travis-ci.com/zillding/websocket-tester.svg?branch=master)](https://travis-ci.com/zillding/websocket-tester)
+
 A simple socket client web app to test both browser `WebSocket` and socket.io
 
 ## Get Started
